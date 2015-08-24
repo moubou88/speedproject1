@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+		<form action='/create_view1/' enctype="='multipart/form-data" method="POST" >
+
+		{% comment %}
+		csrf_token is a randomly generated string of text that the server uses to confirm that the form was creaed by the django server and not a 3rd part / outside website, application or other data source.
+
+		{% endcomment %}
+
+			{% csrf_token %}
+
+			{{ form.as_p }}
+
+			<input type="submit" value="Create Object" />
+
+		</form>
+		{{ errors }}
+{% endblock %}
+
